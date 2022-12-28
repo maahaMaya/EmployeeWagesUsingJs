@@ -1,4 +1,24 @@
 const IS_PRESENT = 0;
+const IS_PART_TINE = 0;
+const IS_FULL_TIME = 1;
+const PART_TIME_HOURS = 4;
+const FULL_TIME_HOURS = 8;
+const WAGE_PER_HOUR = 20;
+
+//UC2
+let empWage = 0;
+let empCheck = Math.floor(Math.random()* 10 % 2);
+switch(empCheck){
+    case IS_PART_TINE:
+        empWage = WAGE_PER_HOUR * PART_TIME_HOURS;
+        break;
+    case IS_FULL_TIME:
+        empWage = WAGE_PER_HOUR  * FULL_TIME_HOURS;
+        break;
+}
+console.log(empWage);
+
+//UC1
 let attandence = Math.floor(Math.random()* 10 % 2);
 if(IS_PRESENT == attandence){
     console.log("Employee is present");
