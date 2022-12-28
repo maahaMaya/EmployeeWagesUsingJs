@@ -6,6 +6,7 @@ const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
 const MONTH_WORKING_DAY = 20;
 let empWage = 0;
+let empMonthlyHours = 0;
 
 //UC3
 function getWorkingHours(empCheck){
@@ -20,9 +21,14 @@ function getWorkingHours(empCheck){
 }
 //UC4
 for(let i = 0; i < MONTH_WORKING_DAY; i++ ){
+    //UC5
+    if(empMonthlyHours > 160){
+        return;
+    }
     let empCheck = Math.floor(Math.random()* 10 % 2);
     let empHours = getWorkingHours(empCheck);
     empWage += WAGE_PER_HOUR * empHours;
+    empMonthlyHours += empHours;  
 }
 console.log("Function to find employee salary :" + empWage)
 
