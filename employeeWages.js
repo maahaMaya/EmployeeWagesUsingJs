@@ -4,8 +4,8 @@ const IS_FULL_TIME = 1;
 const PART_TIME_HOURS = 4;
 const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
+const MONTH_WORKING_DAY = 20;
 let empWage = 0;
-let empCheck = Math.floor(Math.random()* 10 % 2);
 
 //UC3
 function getWorkingHours(empCheck){
@@ -18,13 +18,17 @@ function getWorkingHours(empCheck){
             return 0;
     }
 }
-
-let empHours = getWorkingHours(empCheck);
-empWage = WAGE_PER_HOUR * empHours;
+//UC4
+for(let i = 0; i < MONTH_WORKING_DAY; i++ ){
+    let empCheck = Math.floor(Math.random()* 10 % 2);
+    let empHours = getWorkingHours(empCheck);
+    empWage += WAGE_PER_HOUR * empHours;
+}
 console.log("Function to find employee salary :" + empWage)
 
 
 //UC2
+let empCheck = Math.floor(Math.random()* 10 % 2);
 switch(empCheck){
     case IS_PART_TINE:
         empWage = WAGE_PER_HOUR * PART_TIME_HOURS;
